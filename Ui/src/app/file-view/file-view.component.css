@@ -1,0 +1,12 @@
+.modal-header{
+  vertical-align: bottom;
+  color: white;
+  background-color: green;
+}
+div p span{
+  margin-right: 10px;
+}
+.pdf{
+  height: 550px;
+  width: 100%;
+}

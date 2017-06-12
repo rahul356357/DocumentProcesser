@@ -1,0 +1,78 @@
+<div class="fileupload-container">
+  <div class="row" id="fileupload-browse-row">
+    <div style="margin-left:17px">
+     <span class="input-group-btn">  
+       <button class='home-btn'><i class="fa fa-home"> </i></button>
+       <div class="btn btn-default carga-archivo-input"> 
+        <span class="glyphicon glyphicon-folder-open"></span>
+        <span class="carga-archivo-input-title">Select & Upload File </span>
+        <input type="file" name="multiple" ng2FileSelect [uploader]="uploader" multiple/>
+      </div>
+      <button class="dashboard-btn">Dashboard</button>
+    </span>
+  </div>
+</div>
+<div class="fileuplaod-custom-row">
+  <p id="fileupload-table-header"> <span class="glyphicon glyphicon-menu-hamburger" style="margin-right:3px"></span>Consolidated Information:</p>
+</div>
+<table class="table" >
+  <thead>
+    <tr id="fileupload-header-row" class="danger">
+      <th>
+        <div *ngIf="select&&checked">
+          Select All
+          <input type="checkbox" (click)="selectAll($event)" checked>
+        </div>
+        <div *ngIf="!select||!checked">
+          Select All
+          <input type="checkbox" (click)="selectAll($event)">
+        </div>
+      </th>
+      <th width="50%" style="text-align:center">FileName</th>
+      <th>View </th>
+      <th>Digitize</th>
+      <th>Classification</th>
+      <th>Download</th>
+    </tr>
+  </thead>
+  <tbody>
+     <tr *ngFor="let item of filename, let index=index" class="info">
+      <td align="center">
+        <div *ngIf="select" class="text-center">
+          <input type="checkbox" (click)="clicked($event,item)" checked>
+        </div>
+        <div *ngIf="!select">
+          <input type="checkbox" (click)="clicked($event,item)">
+        </div>
+      </td>
+      <td><strong>{{item.fileinfo.originalname}}</strong></td>
+      <td> <a (click)="modal.viewPDF(1)" (click)="modal.viewPDF2(item)" class="more">View </a></td>
+      <td>
+        <div>
+          <a>Not Initiated</a>
+        </div>
+      </td>
+      <td>
+        <input type="text">
+      </td>
+      <td nowrap>
+        <a>Download</a>
+      </td>
+    </tr>
+    <tr>
+    </tr>
+  </tbody>
+</table>
+<div>
+</div>
+<div class="button-group">
+  <button class="delete-btn">
+    Delete
+  </button><button class="digitize-btn">
+  Digitize
+</button>
+</div>
+
+<app-file-view #modal> </app-file-view>
+
+</div>

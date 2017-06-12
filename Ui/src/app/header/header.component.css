@@ -1,0 +1,15 @@
+#header-wipro-logo{
+    height:140%
+}
+#app-header{
+    color:white;
+        line-height: 2em;
+    margin-left: 24%;
+    font-size: 25px;
+}
+#header-scr-logo{
+background-color: white;
+    width: 100px;
+    height: 50px;
+    padding-right: 4px;
+}

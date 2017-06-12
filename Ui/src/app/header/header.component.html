@@ -1,0 +1,31 @@
+<nav class="navbar navbar-default navbar-inverse">
+  <div class="container-fluid">
+ 
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><img  id ="header-wipro-logo"src="../../assets/holmesLogo.png" alt="Wipro Holmes"></a>
+   
+</div>
+    <div class="" >
+
+      <span id="app-header"> E&P Document Digitization</span>
+      <ul class="nav navbar-nav">
+     
+      </ul>
+   
+       <ul class="nav navbar-nav navbar-right">
+         <ng-template [ngIf]="!authenticationService.isAuthenticated()">    
+             <li><img  id="header-scr-logo" src="../../assets/wipro_logo2.png" alt="wipro_logo"></li>
+       
+      
+       </ng-template>
+     <ng-template [ngIf]="authenticationService.isAuthenticated()">
+        <li><img  id="header-scr-logo" src="../../assets/wipro_logo2.png" alt="wipro_logo"></li>
+         <li><a style="color:white"  routerLink='/login' >
+        <span class="glyphicon glyphicon-log-out"></span>&nbsp;Logout</a></li>
+        </ng-template>
+      
+      </ul>
+    
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
